@@ -1,9 +1,5 @@
-.img-container{
+
+.banner-content-container {
     position: absolute;
+    top: 18vh;
 }
-
-.banner-content-container{
-    position: relative;
-    top: 8vh;
-}
-
