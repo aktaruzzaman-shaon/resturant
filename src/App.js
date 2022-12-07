@@ -1,16 +1,21 @@
 
 import './App.css';
-import Banner from '../src/Component/Banner/Banner'
-import Header from './Component/Shared/Header/Header';
+import { Route, Routes } from 'react-router-dom';
+import Home from './Component/Home/Home/Home';
+import Login from './Component/Login/Login/Login';
+import SignUp from './Component/Login/SignUp/SignUp'
+
 
 
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <Banner></Banner>
-      
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signup' element={<SignUp></SignUp>}></Route>
+      </Routes>
     </div>
   );
 }
