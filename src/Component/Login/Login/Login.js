@@ -2,28 +2,19 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import React from 'react';
 import { useState } from 'react';
 import auth from '../../../firebase.init';
+import useFirebase from '../../Hook/useFirebase';
 
 const Login = () => {
 
-    const [ email, setEmail] = useState("");
-    const [ password, setPassword] = useState("");
+    const { handleSubmit, setEmail, setPassword } = useFirebase();
 
     const handleEmailBlur = (event) => {
         setEmail(event.target.value);
     }
 
-    const handlePasswordBlur = (event) =>{
+    const handlePasswordBlur = (event) => {
         setPassword(event.target.value);
     }
-
-    const handleSubmit = event =>{
-        signInWithEmailAndPassword(auth, email, password)
-        .then(result =>{
-            
-        })
-        event.preventDefault(); 
-    }
-
 
     return (
         <div>

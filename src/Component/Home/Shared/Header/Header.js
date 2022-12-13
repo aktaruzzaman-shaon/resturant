@@ -2,8 +2,10 @@ import React from 'react';
 import './Header.css'
 import logo from '../../../../images/logo2.png'
 import { Link } from 'react-router-dom';
+import useFirebase from '../../../Hook/useFirebase';
 
 const Header = () => {
+    const  { user } = useFirebase();
     return (
         <div className='container'>
             <div className='header-logo'>
@@ -13,7 +15,7 @@ const Header = () => {
                 <Link to="/login"> <button className='m-2' type='login'>login</button></Link>
 
                 <Link to="/signup"><button className='m-2' type="button" class="btn btn-success">SignUp</button></Link>
-
+                <p className='text-primary'>{user.uid}</p>
             </div>
         </div>
     );
