@@ -9,7 +9,7 @@ const Banner = () => {
                 <img className='mx-auto img-fluid' src={bannerbackground} alt="Bannerimage" />
             </div>
             <div className="banner-content-container input-group">
-                <h2 className='d-block w-100'>Best food waiting for your belly</h2>
+                <h2 className='d-block w-100'>Best food waiting for your belly check remote</h2>
 
                 <div className='d-block w-50 mx-auto d-flex'>
                     <input type="text" className="form-control" placeholder="Search food item" aria-label="Recipient's username" aria-describedby="basic-addon2" />
