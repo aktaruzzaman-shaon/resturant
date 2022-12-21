@@ -17,7 +17,7 @@ const BreakfastMenu = () => {
         { id: 6, name: "brkf1", img: breakfasemenu6 }
     ]
     return (
-        <div>
+        <div id='breakfast'>
             <div className="container">
                 <div className="row">
                     <div>
