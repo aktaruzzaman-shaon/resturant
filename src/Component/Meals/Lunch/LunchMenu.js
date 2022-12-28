@@ -7,9 +7,6 @@ import lunch5 from '../../../images/lunch/lunch5.png'
 import lunch6 from '../../../images/lunch/lunch6.png'
 import Meal from '../Meal/Meal';
 
-
-
-
 const LunchMenu = () => {
 
     const LunchMenus = [
