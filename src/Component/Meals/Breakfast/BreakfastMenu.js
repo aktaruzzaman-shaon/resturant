@@ -24,7 +24,7 @@ const BreakfastMenu = () => {
                         {
                             breakfastMenus.map(breakfastMenu => <Meal
                                 key={breakfastMenu.id}
-                                breakfastMenu={breakfastMenu}
+                                Menu={breakfastMenu}
                             ></Meal>)
                         }
                     </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Meal = ({ breakfastMenu }) => {
+const Meal = ({ Menu }) => {
 
-    const { name, img } = breakfastMenu;
+    const { name, img } = Menu;
     return (
         <div>
             <div className='g-5 col-12 col-md-6 col-lg-4'>
