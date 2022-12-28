@@ -6,6 +6,7 @@ import breakfasemenu4 from '../../../images/breakfast/breakfast4.png'
 import breakfasemenu5 from '../../../images/breakfast/breakfast5.png'
 import breakfasemenu6 from '../../../images/breakfast/breakfast6.png'
 import Meal from '../Meal/Meal';
+import './BreakfastMenu.css'
 
 const BreakfastMenu = () => {
     const breakfastMenus = [
@@ -17,14 +18,15 @@ const BreakfastMenu = () => {
         { id: 6, name: "brkf1", img: breakfasemenu6 }
     ]
     return (
+       
         <div id='breakfast'>
             <div className="container">
                 <div className="row">
-                    <div>
+                    <div className='breakfastMenuContainer'>
                         {
                             breakfastMenus.map(breakfastMenu => <Meal
                                 key={breakfastMenu.id}
-                                breakfastMenu={breakfastMenu}
+                                Menu={breakfastMenu}
                             ></Meal>)
                         }
                     </div>

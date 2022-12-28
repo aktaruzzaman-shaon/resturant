@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Meal = ({ breakfastMenu }) => {
+const Meal = ({ Menu }) => {
 
-    const { name, img } = breakfastMenu;
+    const { name, img } = Menu;
+
     return (
-        <div>
-            <div className='g-5 col-12 col-md-6 col-lg-4'>
+        <div className='col-md-3'>
+            <div className='mb-5'>
                 <div className="card" style={{ width: "18rem" }}>
                     <img src={img} className="card-img-top" alt="..." />
                     <div className="card-body">
