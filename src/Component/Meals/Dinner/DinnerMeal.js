@@ -18,14 +18,14 @@ const DinnerMeal = () => {
     ]
     return (
         < div >
-                {
-                    DinnerMenus.map(dinnerMenu =>
-                        <Meal
-                            key={dinnerMenu.id}
-                            Menu={dinnerMenu}
-                        ></Meal>
-                        )
-                }
+            {
+                DinnerMenus.map(dinnerMenu =>
+                    <Meal
+                        key={dinnerMenu.id}
+                        Menu={dinnerMenu}
+                    ></Meal>
+                )
+            }
         </div >
     );
 };

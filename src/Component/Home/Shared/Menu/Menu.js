@@ -12,8 +12,8 @@ const Menu = () => {
                 <Container>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="m-auto">
-                            <Nav.Link as={Link} to="breakfast" >Breakfast</Nav.Link>
-                            <Nav.Link as={Link} to="Lunch" >Lunch</Nav.Link>
+                            <Nav.Link as={Link} to="breakfast">Breakfast</Nav.Link>
+                            <Nav.Link as={Link} to="Lunch">Lunch</Nav.Link>
                             <Nav.Link as={Link} to="Dinner">Dinner</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
