@@ -6,8 +6,10 @@ import dinner4 from '../../../images/dinner/dinner4.png'
 import dinner5 from '../../../images/dinner/dinner5.png'
 import dinner6 from '../../../images/dinner/dinner6.png'
 import Meal from '../Meal/Meal';
+import './DinnerMeal.css';
 
 const DinnerMeal = () => {
+
     const DinnerMenus = [
         { id: 1, name: "dinner1", img: dinner1 },
         { id: 2, name: "dinner2", img: dinner2 },
@@ -16,17 +18,24 @@ const DinnerMeal = () => {
         { id: 5, name: "dinner5", img: dinner5 },
         { id: 6, name: "dinner6", img: dinner6 }
     ]
+
+
     return (
-        < div >
-            {
-                DinnerMenus.map(dinnerMenu =>
-                    <Meal
-                        key={dinnerMenu.id}
-                        Menu={dinnerMenu}
-                    ></Meal>
-                )
-            }
-        </div >
+        <div className="container">
+            <div className="row">
+                <div className="dinnerMenu mt-5">
+                        {
+                            DinnerMenus.map(dinnerMenu =>
+                                <Meal
+                                    key={dinnerMenu.id}
+                                    Menu={dinnerMenu}
+                                ></Meal>
+                            )
+                        }
+                </div>
+            </div>
+        </div>
+
     );
 };
 

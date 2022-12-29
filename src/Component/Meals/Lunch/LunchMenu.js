@@ -22,7 +22,7 @@ const LunchMenu = () => {
     return (
         <div className="container">
             <div className='row'>
-                <div className="lunchMenu">
+                <div className="lunchMenu mt-5">
                     {
                         LunchMenus.map(lunchMenu =>
                             <Meal

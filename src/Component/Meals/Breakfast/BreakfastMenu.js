@@ -22,7 +22,7 @@ const BreakfastMenu = () => {
         <div id='breakfast'>
             <div className="container">
                 <div className="row">
-                    <div className='breakfastMenuContainer'>
+                    <div className='breakfastMenuContainer mt-5'>
                         {
                             breakfastMenus.map(breakfastMenu => <Meal
                                 key={breakfastMenu.id}
