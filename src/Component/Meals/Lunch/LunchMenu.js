@@ -6,22 +6,36 @@ import lunch4 from '../../../images/lunch/lunch4.png'
 import lunch5 from '../../../images/lunch/lunch5.png'
 import lunch6 from '../../../images/lunch/lunch6.png'
 import Meal from '../Meal/Meal';
+import './LunchMenu.css'
 
 const LunchMenu = () => {
 
     const LunchMenus = [
-        { id: 1, name: "brkf1", img: lunch1 },
-        { id: 2, name: "brkf1", img: lunch2 },
-        { id: 3, name: "brkf1", img: lunch3 },
-        { id: 4, name: "brkf1", img: lunch4 },
-        { id: 5, name: "brkf1", img: lunch5 },
-        { id: 6, name: "brkf1", img: lunch6 }
+        { id: 1, name: "lunch1", img: lunch1 },
+        { id: 2, name: "lunch2", img: lunch2 },
+        { id: 3, name: "lunch3", img: lunch3 },
+        { id: 4, name: "lunch4", img: lunch4 },
+        { id: 5, name: "lunch5", img: lunch5 },
+        { id: 6, name: "lunch6", img: lunch6 }
     ]
 
     return (
-        <div>
-            <h2>This is lunch menu now i edit this</h2>
+        <div className="container">
+            <div className='row'>
+                <div className="lunchMenu">
+                    {
+                        LunchMenus.map(lunchMenu =>
+                            <Meal
+                                key={lunchMenu.id}
+                                Menu={lunchMenu}
+                            ></Meal>
+                        )
+                    }
+                </div>
+
+            </div>
         </div>
+
     );
 }
 export default LunchMenu;
