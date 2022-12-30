@@ -3,6 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import auth from '../../../firebase.init';
 import useFirebase from '../../Hook/useFirebase';
+import './Login.css'
 
 const Login = () => {
 
@@ -27,6 +28,15 @@ const Login = () => {
                         <input type="password" className="form-control" onBlur={handlePasswordBlur} placeholder='Password' />
                     </div>
                     <button type="submit" className="btn btn-primary">Login</button>
+
+                    <div className='or'></div>
+
+                    <div className='fb-loginButton'>
+                        <button>Facebook</button>
+                    </div>
+                    <div className="google-loginButton">
+                        <button>Google</button>
+                    </div>
                 </div>
             </form>
         </div>
