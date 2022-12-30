@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css'
-import logo from '../../../../images/logo2.png'
+import logo from '../../../../images/logo/logo2.png'
 import { Link } from 'react-router-dom';
 import useFirebase from '../../../Hook/useFirebase';
 
