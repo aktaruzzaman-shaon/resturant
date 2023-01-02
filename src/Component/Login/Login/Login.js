@@ -4,10 +4,13 @@ import useFirebase from '../../Hook/useFirebase';
 import './Login.css'
 import { signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 import { useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
-    const [user, setUser] = useState({});
+    // const [user, setUser] = useState({});
+    const navigate = useNavigate();
+    const { handleGoogleSignIn, user } = useFirebase();
 
     const { handleSubmit, setEmail, setPassword } = useFirebase();
 
@@ -20,29 +23,19 @@ const Login = () => {
     }
 
     // Google authentication
-    const handleGoogleSignIn = () => {
-        const provider = new GoogleAuthProvider();
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                const user = result.user;
-                console.log(user);
-            })
-            .catch((error) => {
-                console.log(error.message);
-            })
-    }
+    // const handleGoogleSignIn = () => {
+    //     const provider = new GoogleAuthProvider();
+    //     signInWithPopup(auth, provider)
+    //         .then((result) => {
+    //             const user = result.user;
+    //             navigate('/')
+    //             console.log(user);
+    //         })
+    //         .catch((error) => {
+    //             console.log(error.message);
+    //         })
+    // }
 
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            // User is signed in, see docs for a list of available properties
-            // https://firebase.google.com/docs/reference/js/firebase.User
-            setUser(user);
-            // ...
-        } else {
-            // User is signed out
-            // ...
-        }
-    });
 
     return (
         <div>
@@ -67,10 +60,9 @@ const Login = () => {
                     </div>
                     <div className="google-loginButton">
                         <button
-                            onClick={() => handleGoogleSignIn()}
+                            onClick={handleGoogleSignIn}
                         >Google</button>
                     </div>
-                    <p>Name : {user.displayName}</p>
                 </div>
             </form>
         </div>

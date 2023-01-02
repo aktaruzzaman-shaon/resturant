@@ -1,25 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css'
 import logo from '../../../../images/logo/logo2.png'
 import { Link } from 'react-router-dom';
 import auth from '../../../../firebase.init';
+import { signOut } from 'firebase/auth';
+import useFirebase from '../../../Hook/useFirebase';
 
 
 const Header = () => {
-    const user = auth.currentUser;
+   const { user, handleGoogleSignIn } = useFirebase;
     return (
         <div className='container'>
             <div className='header-logo'>
                 <img src={logo} alt="" />
             </div>
             <div className='header-login'>
-                <Link to="/login"> <button className='m-2' type='login'>login</button></Link>
+                {
+                    user ? <button onClick={handleGoogleSignIn} className="btn btn-primary">SignOut</button> :
+                        <Link to="/login"> <button className='m-2' type='login' onClick={handleGoogleSignIn}>login</button></Link>
+                }
                 <Link to="/signup"><button className='m-2 btn btn-success' type="button">SignUp</button></Link>
             </div>
             <div>
                 <p className='text-primary'>{user?.displayName}</p>
             </div>
-        </div>
+        </div >
     );
 };
 
