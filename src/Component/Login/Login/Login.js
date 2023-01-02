@@ -3,8 +3,11 @@ import auth from '../../../firebase.init';
 import useFirebase from '../../Hook/useFirebase';
 import './Login.css'
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useState } from 'react';
 
 const Login = () => {
+
+    const [user, setUser] = useState({});
 
     const { handleSubmit, setEmail, setPassword } = useFirebase();
 
@@ -17,38 +20,17 @@ const Login = () => {
     }
 
     // Google authentication
-    // signInWithPopup(auth, GoogleAuthProvider)
-    //     .then((result) => {
-    //         const user = result.user;
-    //         console.log(user);
-    //     })
-    //     .catch((error) => {
-    //         console.log(error.message);
-    //     })
-
-
-
-    const provider = new GoogleAuthProvider();
-
     const handleGoogleSignIn = () => {
+        const provider = new GoogleAuthProvider();
         signInWithPopup(auth, provider)
             .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-                // The signed-in user info.
                 const user = result.user;
-                // ...
-            }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.customData.email;
-                // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
-            });
+                setUser(user);
+                console.log(user);
+            })
+            .catch((error) => {
+                console.log(error.message);
+            })
     }
 
     return (
@@ -61,7 +43,11 @@ const Login = () => {
                     <div className="mb-3">
                         <input type="password" className="form-control" onBlur={handlePasswordBlur} placeholder='Password' />
                     </div>
-                    <button type="submit" className="btn btn-primary">Login</button>
+                    {
+                        user.email ? <button type="submit" className="btn btn-primary">SignOut</button> :
+                            <button type="submit" className="btn btn-primary">Login</button>
+
+                    }
 
                     <div className='or'></div>
 
@@ -70,10 +56,10 @@ const Login = () => {
                     </div>
                     <div className="google-loginButton">
                         <button
-
                             onClick={() => handleGoogleSignIn()}
                         >Google</button>
                     </div>
+                    <p>Name : {user.displayName}</p>
                 </div>
             </form>
         </div>

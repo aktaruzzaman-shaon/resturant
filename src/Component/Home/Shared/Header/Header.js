@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css'
 import logo from '../../../../images/logo/logo2.png'
 import { Link } from 'react-router-dom';
-import useFirebase from '../../../Hook/useFirebase';
+
 
 const Header = () => {
     // const { user } = useFirebase();
@@ -17,7 +17,6 @@ const Header = () => {
             </div>
             {/* <div>
                 <p className='text-primary'>{user.email}</p>
-
             </div> */}
         </div>
     );
