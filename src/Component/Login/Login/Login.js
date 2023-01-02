@@ -2,7 +2,7 @@ import React from 'react';
 import auth from '../../../firebase.init';
 import useFirebase from '../../Hook/useFirebase';
 import './Login.css'
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 import { useState } from 'react';
 
 const Login = () => {
@@ -25,13 +25,24 @@ const Login = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
                 const user = result.user;
-                setUser(user);
                 console.log(user);
             })
             .catch((error) => {
                 console.log(error.message);
             })
     }
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            setUser(user);
+            // ...
+        } else {
+            // User is signed out
+            // ...
+        }
+    });
 
     return (
         <div>
@@ -67,3 +78,5 @@ const Login = () => {
 };
 
 export default Login;
+
+

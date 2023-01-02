@@ -5,9 +5,9 @@ const Meal = ({ Menu }) => {
     const { name, img } = Menu;
 
     return (
-        <div>
+        <div className='meal'>
             <div className='mb-5'>
-                <div className="card menu-design" style={{ width: "18rem" }}>
+                <div className="card menu-design" >
                     <img src={img} className="card-img-top w-50" alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{name}</h5>

@@ -1,3 +1,12 @@
+.meal {
+    align-items: center;
+}
+
+.meal:hover {
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+
 .menu-design {
     border: none;
     align-items: center;
